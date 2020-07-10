@@ -66,12 +66,14 @@ let greeting = person => {
 console.log(greeting({name: `Alice`}));  // "Howdy, Alice"
 console.log(greeting(null));             // "Howdy, stranger"
 
-// Another example
-let [profit, costs] = [120000, 100000]  // It was a good month 
+// Another example.
+//Best practice when assigning variables
 // Employee bonus structure: $1000 if >10% profit, $100 if not
+let [profit, costs] = [120000, 100000]  // It was a good month 
 let employeeBonus = (profit/costs > 1.10) ? 1000 : 100
 console.log("$"+employeeBonus)  // $1000
 
+// Here, the determination of the bonus takes just one line, so no need for if, else {} blocks
 
 
 
