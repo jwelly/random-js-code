@@ -72,8 +72,12 @@ console.log(greeting(null));             // "Howdy, stranger"
 let [profit, costs] = [120000, 100000]  // It was a good month 
 let employeeBonus = (profit/costs > 1.10) ? 1000 : 100
 console.log("$"+employeeBonus)  // $1000
-
 // Here, the determination of the bonus takes just one line, so no need for if, else {} blocks
+
+// Factorial example from FCC. This involves RECURSION. The function is calling itself.
+function factorialize(num) {
+  return num < 0 ? undefined : num <= 1 ? 1 : num * factorialize(num - 1);
+}
 
 
 
