@@ -81,3 +81,36 @@ function factorialize(num) {
 
 
 
+// Return an array consisting of the largest number from each provided sub-array.
+// For simplicity, the provided array will contain exactly 4 sub-arrays.
+// Procedural approach
+function largestOfFour(arr) {
+  var results = [];
+  for (var n = 0; n < arr.length; n++) {
+    var largestNumber = arr[n][0];
+    for (var sb = 1; sb < arr[n].length; sb++) {
+      if (arr[n][sb] > largestNumber) {
+        largestNumber = arr[n][sb];
+      }
+    }
+    results[n] = largestNumber;
+  }
+  return results;
+}
+console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+// [ 5, 27, 39, 1001 ]
+
+// Alternatively, you can use a .sort method
+function largestOfFour(arr) {
+
+  var arrNew = [];
+
+  for(var i = 0; i < arr.length; i++){
+    arrNew.push(arr[i].sort(function(a, b){
+      return b-a;
+    })[0]);
+    // The [0] refers to the first value in the now-sorted array, which is now the HIGHEST value
+  }
+  return arrNew;
+}
+console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
