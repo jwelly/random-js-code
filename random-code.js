@@ -114,3 +114,32 @@ function largestOfFour(arr) {
   return arrNew;
 }
 console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+
+
+
+// Promises!
+const promise = new Promise(resolve => setTimeout(() => resolve('dAlan'), 100));
+
+promise.then(res => {
+  return res === 'Alan' ? Promise.resolve('Hey Alan!') : Promise.reject('Who are you?')
+}).then((res) => {
+  console.log(res)
+}, (err) => {
+  alert(err)
+});
+
+// The above uses a shorter method of if... else, with ? and :
+// Below produces the same result, but with if... else
+const promise = new Promise(resolve => setTimeout(() => resolve('dAlan'), 100));
+
+promise.then(res => {
+  if (res === 'Alan') {
+    return Promise.resolve('Hey Alan!');
+  } else {
+    return Promise.reject('Who are you?');
+  }
+}).then((res) => {
+  console.log(res)
+}, (err) => {
+  alert(err)
+});
