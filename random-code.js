@@ -24,10 +24,10 @@ console.log(reverseString("Greetings from Earth"));
 
   
 // Accessing Object Properties with Variables
-/* Another use of bracket notation on objects is to access a
-    property which is stored as the value of a variable.
-    This can be very useful for iterating through an object's properties
-    or when accessing a lookup table. */
+// Another use of bracket notation on objects is to access a
+//    property which is stored as the value of a variable.
+//    This can be very useful for iterating through an object's properties
+//    or when accessing a lookup table.
 var someObj = {
     propName: "John"
 };
@@ -98,7 +98,7 @@ function largestOfFour(arr) {
   return results;
 }
 console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
-// [ 5, 27, 39, 1001 ]
+// This logs: [ 5, 27, 39, 1001 ]
 
 // Alternatively, you can use a .sort method
 function largestOfFour(arr) {
@@ -143,3 +143,51 @@ promise.then(res => {
 }, (err) => {
   alert(err)
 });
+
+
+
+// Write an async function, matchPromises().
+// Your function should have two parameters—both functions that take no arguments and return promises.
+// When invoked, matchPromises() should invoke the two function arguments and compare the two promises:
+    // If the promises have the same resolved value, matchPromises() should return the string "match".
+    // If the promises have different resolved values, matchPromises() should return the string "no match".
+    // If either promise rejects, matchPromises() should return the string "error".
+function firstFunction() {
+  let number = Math.floor(Math.random() * 10)
+  return new Promise(function(resolve, reject){
+    if (number > 5) {
+      resolve(number)
+    }
+    else {
+      reject(number)
+    }
+  })
+};
+
+function secondFunction() {
+  return new Promise(function(resolve){
+    resolve(Math.floor(Math.random() * 10))
+  })
+};
+
+async function matchPromises(firstFunction,secondFunction) {
+  let result;
+  try {
+    let firstFunctionResult = await firstFunction;
+    let secondFunctionResult = await secondFunction;
+    
+    if ( firstFunctionResult === secondFunctionResult) {
+      result = 'match';
+    }
+    else {
+      result = 'no match'
+    };
+  } catch(error) {
+    result = 'error'
+  };
+  
+  console.log(result);
+  return result;
+}
+
+matchPromises(firstFunction(),secondFunction())
