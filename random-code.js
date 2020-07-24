@@ -1,4 +1,3 @@
-/*
 // .sort method. It treats numbers as strings! So watch out
 function findLongestWordLength(str) {
   let array = str.split(" ");
@@ -145,7 +144,7 @@ promise.then(res => {
   alert(err)
 });
 
-*/
+
 
 // Write an async function, matchPromises().
 // Your function should have two parameters—both functions that take no arguments and return promises.
