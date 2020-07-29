@@ -191,3 +191,35 @@ async function matchPromises(firstFunction,secondFunction) {
 }
 
 matchPromises(firstFunction,secondFunction)
+
+
+
+// Example of a SWITCH statement:
+// Here we check the value of avgGrade with 5 different cases (inc default)
+function finalGrade(num1, num2, num3) {
+  if ((num1 < 0 || num1 > 100) || (num2 < 0 || num2 > 100) || (num3 < 0 || num3 > 100)) {
+    return 'You have entered an invalid grade.';
+  } else {
+  const avgGrade = (num1 + num2 + num3) / 3;
+  switch (true) {
+    case (avgGrade >= 0 && avgGrade <= 59):
+      return 'F';
+      break;
+    case (avgGrade >= 60 && avgGrade <= 69):
+      return 'D';
+      break;
+    case (avgGrade >= 70 && avgGrade <= 79):
+      return 'C';
+      break;
+    case (avgGrade >= 80 && avgGrade <= 89):
+      return 'B';
+      break;
+    default:
+      return 'A';
+      break;
+    }
+  }
+}
+
+console.log(finalGrade(99, 92, 95)) // Should print 'A'
+
