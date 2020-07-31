@@ -237,3 +237,18 @@ const myStuff = [ 'rules', 'fruit-by-the-foot', 'wedgies', 'sweaters', 'skateboa
 
 console.log(justCoolStuff(myStuff, coolStuff))
 // Should print [ 'fruit-by-the-foot', 'skateboards', 'my room' ]
+
+
+
+// Example of using .every
+// NOTE: if you use the optional { } in an arrow function, or a function declaration (like below)
+// then you also have to use return to return the result.
+function isTheDinnerVegan(array) {
+  return array.every(item => item.source === 'plant');
+};
+// alternative:
+//  const isTheDinnerVegan = array => array.every(item => item.source === "plant");
+
+const dinner = [{name: 'hamburger', source: 'meat'}, {name: 'cheese', source: 'dairy'}, {name: 'ketchup', source:'plant'}, {name: 'bun', source: 'plant'}, {name: 'dessert twinkies', source:'unknown'}];
+
+console.log(isTheDinnerVegan(dinner))
