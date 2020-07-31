@@ -223,3 +223,17 @@ function finalGrade(num1, num2, num3) {
 
 console.log(finalGrade(99, 92, 95)) // Should print 'A'
 
+
+
+// Example of filtering arrays and returning array with only the common items
+function justCoolStuff (arr1, arr2) {
+  const filteredArray = arr1.filter(item => arr2.includes(item));
+  return filteredArray;
+}
+
+const coolStuff = ['gameboys', 'skateboards', 'backwards hats', 'fruit-by-the-foot', 'pogs', 'my room', 'temporary tattoos'];
+
+const myStuff = [ 'rules', 'fruit-by-the-foot', 'wedgies', 'sweaters', 'skateboards', 'family-night', 'my room', 'braces', 'the information superhighway']; 
+
+console.log(justCoolStuff(myStuff, coolStuff))
+// Should print [ 'fruit-by-the-foot', 'skateboards', 'my room' ]
