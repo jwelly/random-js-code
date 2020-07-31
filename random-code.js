@@ -252,3 +252,16 @@ function isTheDinnerVegan(array) {
 const dinner = [{name: 'hamburger', source: 'meat'}, {name: 'cheese', source: 'dairy'}, {name: 'ketchup', source:'plant'}, {name: 'bun', source: 'plant'}, {name: 'dessert twinkies', source:'unknown'}];
 
 console.log(isTheDinnerVegan(dinner))
+
+
+
+// Example using .sort()
+// We sort an array in asc order based on the avg number of teeth that species possesses
+const speciesArray = [ {speciesName:'shark', numTeeth:50}, {speciesName:'dog', numTeeth:42}, {speciesName:'alligator', numTeeth:80}, {speciesName:'human', numTeeth:32}];
+
+function sortSpeciesByTeeth(array) {
+  array.sort((a, b) => a.numTeeth - b.numTeeth);
+  return array;
+}
+
+console.log(sortSpeciesByTeeth(speciesArray));
